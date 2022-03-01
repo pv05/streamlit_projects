@@ -1,6 +1,7 @@
 import pickle
 import streamlit as st
 import pandas as pd  
+import urllib.request
 
 teams = [
     'Sunrisers Hyderabad',
@@ -21,7 +22,8 @@ cites = ['Hyderabad', 'Pune', 'Rajkot', 'Indore', 'Bangalore', 'Mumbai',
        'Visakhapatnam', 'Raipur', 'Ranchi', 'Abu Dhabi', 'Sharjah',
        'Mohali', 'Bengaluru']
 
-pipe = pickle.load(open('pipe.pkl','rb'))
+#pipe = pickle.load(open('pipe.pkl','rb'))
+pipe = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=10ml5J_qQBPimLu30WbxjXJ05oxqco2-g")))
 
 st.title('IPl Win Predictor')
 
