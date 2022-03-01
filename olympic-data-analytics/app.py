@@ -21,6 +21,7 @@ st.markdown(""" <style>#MainMenu {visibility: hidden;}footer {visibility: hidden
 df = pd.read_csv('athlete_events.csv')
 region_df = pd.read_csv('noc_regions.csv')
 
+st.title('Summer Olympic Data')
 df = preprocessor.preprocess(df,region_df) # self create object our own module
 
 st.sidebar.title('Olympics Games Analaysis')
