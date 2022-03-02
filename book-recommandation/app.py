@@ -8,8 +8,10 @@ import urllib.request
 # book_pivot = pickle.load(open('book_pivotpkl.pkl','rb'))
 # final_img_url = pd.read_csv('final_img_url.csv')
 
-model = pickle.load(urllib.request.urlopen('https://drive.google.com/uc?export=download&id=1oE7rVB8Kw9Q1dT9aiLJ0ERiKt7WqSZ77'))
-book_pivot = pickle.load(urllib.request.urlopen('https://drive.google.com/uc?export=download&id=1x7g-uMesHi-YwRINjhGkOgcEhhlK3W5-'))
+model = pickle.load(urllib.request.urlopen('https://www.googleapis.com/drive/v3/files/1oE7rVB8Kw9Q1dT9aiLJ0ERiKt7WqSZ77?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k'))
+book_pivot = pickle.load(urllib.request.urlopen('https://www.googleapis.com/drive/v3/files/1x7g-uMesHi-YwRINjhGkOgcEhhlK3W5-?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k'))
+
+
 final_img_url = pd.read_csv('final_img_url.csv')
 
 st.title('Book Recommandation')
@@ -40,17 +42,22 @@ if st.button('Recommand'):
     col1,col2,col3,col4,col5 = st.columns(5)
 
     with col1:
+        link[0] = link[0].replace('http://images.amazon.com/','https://m.media-amazon.com/')
         st.text(book[0])
         st.image(link[0])
     with col2:
-        st.text(book[1])
+        link[1] = link[1].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        st.text(book[1]) 
         st.image(link[1])
     with col3:
-        st.text(book[2])
+        link[2] = link[2].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        st.text(book[2]) 
         st.image(link[2])
     with col4:
-        st.text(book[3])
+        link[3] = link[3].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        st.text(book[3]) 
         st.image(link[3])
     with col5:
-        st.text(book[4])
+        link[4] = link[4].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        st.text(book[4]) 
         st.image(link[4])
