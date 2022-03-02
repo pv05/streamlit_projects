@@ -11,8 +11,7 @@ import urllib.request
 model = pickle.load(urllib.request.urlopen('https://www.googleapis.com/drive/v3/files/1oE7rVB8Kw9Q1dT9aiLJ0ERiKt7WqSZ77?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k'))
 book_pivot = pickle.load(urllib.request.urlopen('https://www.googleapis.com/drive/v3/files/1x7g-uMesHi-YwRINjhGkOgcEhhlK3W5-?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k'))
 
-
-final_img_url = pd.read_csv('final_img_url.csv')
+final_img_url = pd.read_csv('https://raw.githubusercontent.com/pv05/streamlit_projects/main/book-recommandation/final_img_url.csv')
 
 st.title('Book Recommandation')
 
@@ -36,28 +35,41 @@ def recommand_book1(book_name):
 
     return book_name,book_link
 
+
+
 if st.button('Recommand'):
+    st.write('Recommanded Suggestions')
     book,link = recommand_book1(selected_book)
 
     col1,col2,col3,col4,col5 = st.columns(5)
 
     with col1:
         link[0] = link[0].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        link[0] = link[0].replace('https://dummyimage.com/200x200/000000/fff.png&text=No+Image+Preview','https://dummyimage.com/305x500/000000/fff.png&text=No+Image+Preview')
+
         st.text(book[0])
         st.image(link[0])
     with col2:
         link[1] = link[1].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        link[1] = link[1].replace('https://dummyimage.com/200x200/000000/fff.png&text=No+Image+Preview','https://dummyimage.com/305x500/000000/fff.png&text=No+Image+Preview')
+
         st.text(book[1]) 
         st.image(link[1])
     with col3:
         link[2] = link[2].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        link[2] = link[2].replace('https://dummyimage.com/200x200/000000/fff.png&text=No+Image+Preview','https://dummyimage.com/305x500/000000/fff.png&text=No+Image+Preview')
+
         st.text(book[2]) 
         st.image(link[2])
     with col4:
         link[3] = link[3].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        link[3] = link[3].replace('https://dummyimage.com/200x200/000000/fff.png&text=No+Image+Preview','https://dummyimage.com/305x500/000000/fff.png&text=No+Image+Preview')
+
         st.text(book[3]) 
         st.image(link[3])
     with col5:
         link[4] = link[4].replace('http://images.amazon.com/','https://m.media-amazon.com/')
+        link[4] = link[4].replace('https://dummyimage.com/200x200/000000/fff.png&text=No+Image+Preview','https://dummyimage.com/305x500/000000/fff.png&text=No+Image+Preview')
+
         st.text(book[4]) 
         st.image(link[4])
