@@ -37,7 +37,7 @@ model = tensorflow.keras.Sequential([
 
 def save_upploaded_file(uploaded_file):
     try:
-        with open(os.path.join('uploads', uploaded_file.name), 'wb') as f:
+        with open(uploaded_file.name, 'wb') as f:
             f.write(uploaded_file.getbuffer())
             return 1
     except:
@@ -135,5 +135,5 @@ if uploaded_file is not None:
 
         
     except:
-        os.remove(os.path.join('uploads',uploaded_file.name))
+        #os.remove(os.path.join('uploads',uploaded_file.name))
         st.header('Sorry!! File should be Image')
