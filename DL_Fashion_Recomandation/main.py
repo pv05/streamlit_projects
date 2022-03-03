@@ -95,7 +95,7 @@ if uploaded_file is not None:
         display_img = Image.open(uploaded_file)
         st.image(display_img, width=None)
 
-        features = feature_extraction(os.path.join('uploads', uploaded_file.name), model)
+        features = feature_extraction(uploaded_file.name, model)
         st.header('Recommanded Products')
         
 
