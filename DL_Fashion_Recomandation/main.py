@@ -98,8 +98,7 @@ if uploaded_file is not None:
         features = feature_extraction(uploaded_file.name, model)
         st.header('Recommanded Products')
         
-
-        os.remove(os.path.join('uploads',uploaded_file.name))
+        #os.remove(os.path.join('uploads',uploaded_file.name))
 
         indices = recommand(features, feature_list)
 
