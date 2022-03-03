@@ -89,6 +89,7 @@ def display_with_link():
 
 
 uploaded_file = st.file_uploader('Choose an image',type=['jpg','png'])
+st.write(uploaded_file)
 if uploaded_file is not None:
     save_upploaded_file(uploaded_file)
     try:
