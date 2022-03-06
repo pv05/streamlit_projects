@@ -18,8 +18,8 @@ def formatINR(number):
 st.markdown(""" <style>#MainMenu {visibility: hidden;}footer {visibility: hidden;}</style> """, unsafe_allow_html=True)
 # hide setting button end
 
-df = pd.read_csv('athlete_events.csv')
-region_df = pd.read_csv('noc_regions.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/pv05/streamlit_projects/main/olympic-data-analytics/athlete_events.csv')
+region_df = pd.read_csv('https://raw.githubusercontent.com/pv05/streamlit_projects/main/olympic-data-analytics/noc_regions.csv')
 
 st.title('Summer Olympic Data')
 df = preprocessor.preprocess(df,region_df) # self create object our own module
