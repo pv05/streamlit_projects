@@ -4,14 +4,18 @@ import streamlit as st
 from babel.numbers import format_currency
 import urllib.request
 
-
 # import the model
 # pipe = pickle.load(open('pipe.pkl','rb'))
 # df = pickle.load(open('df.pkl','rb'))
 
 
-pipe = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=1flf5wheLXQYos-5Nuy9PPGn79cDNppFM")))
-df = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=14-zRh0M2sCNCf4wF_IazLEvrgSyb_YsP")))
+# pipe = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=1flf5wheLXQYos-5Nuy9PPGn79cDNppFM")))
+# df = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=14-zRh0M2sCNCf4wF_IazLEvrgSyb_YsP")))
+
+url1 = "https://www.googleapis.com/drive/v3/files/1flf5wheLXQYos-5Nuy9PPGn79cDNppFM?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k"
+url2 = "https://www.googleapis.com/drive/v3/files/14-zRh0M2sCNCf4wF_IazLEvrgSyb_YsP?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k"
+pipe = pickle.load(urllib.request.urlopen(url1))
+df = pickle.load(urllib.request.urlopen(url2))
 
 st.title("Laptop Predictor")
 
