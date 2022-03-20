@@ -29,7 +29,7 @@ def recommand(movie):
 # movie_dict = pickle.load(open('movie_dict.pkl','rb'))
 
 #we use google drive api for large file
-movie_dict =  pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=1nJmfC1VBVTHM5bo6hsChVXazWpU8d8tN")))
+movie_dict =  pickle.load(urllib.request.urlopen(("https://www.googleapis.com/drive/v3/files/1nJmfC1VBVTHM5bo6hsChVXazWpU8d8tN?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k")))
 similarity =  pickle.load(urllib.request.urlopen(("https://www.googleapis.com/drive/v3/files/1PGoyJzpTSkosynS8Rg-X-wTGXXnIq7fH?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k")))
 
 
