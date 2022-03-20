@@ -23,7 +23,7 @@ cites = ['Hyderabad', 'Pune', 'Rajkot', 'Indore', 'Bangalore', 'Mumbai',
        'Mohali', 'Bengaluru']
 
 #pipe = pickle.load(open('pipe.pkl','rb'))
-pipe = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=10ml5J_qQBPimLu30WbxjXJ05oxqco2-g")))
+pipe = pickle.load(urllib.request.urlopen(("https://www.googleapis.com/drive/v3/files/10ml5J_qQBPimLu30WbxjXJ05oxqco2-g?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k")))
 
 st.title('IPl Win Predictor')
 
