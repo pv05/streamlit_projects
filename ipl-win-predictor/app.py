@@ -22,7 +22,7 @@ cites = ['Hyderabad', 'Pune', 'Rajkot', 'Indore', 'Bangalore', 'Mumbai',
        'Visakhapatnam', 'Raipur', 'Ranchi', 'Abu Dhabi', 'Sharjah',
        'Mohali', 'Bengaluru']
 
-#pipe = pickle.load(open('pipe.pkl','rb'))
+# pipe = pickle.load(open('pipe.pkl','rb'))
 pipe = pickle.load(urllib.request.urlopen(("https://www.googleapis.com/drive/v3/files/10ml5J_qQBPimLu30WbxjXJ05oxqco2-g?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k")))
 
 st.title('IPl Win Predictor')
@@ -50,7 +50,7 @@ with col3:
     wickets = st.number_input('wickets out')
 
 if st.button('Predict Wining Probabity'):
-    try:
+    # try:
         runs_left = target - score
         balls_left = 120 - (overs*6)
         wickets = 10 - wickets
@@ -63,17 +63,17 @@ if st.button('Predict Wining Probabity'):
             'city':[selected_cites],
             'runs_left':[runs_left],
             'balls_left':[balls_left],
-            'wickets_left':[wickets],
+            'wickets':[wickets],
             'total_runs_x':[target],
             'crr':[crr],
             'rrr':[rrr],
         })
-
+        
         result = pipe.predict_proba(input_df)
         loss = result[0][0]
         win = result[0][1]
-        st.header(batting_team + " is - " + str(round(win*100)) + "%")
-        st.header(bowling_team + " is - " + str(round(loss*100)) + "%")
+        st.header(batting_team + " - " + str(round(win*100)) + "%")
+        st.header(bowling_team + " - " + str(round(loss*100)) + "%")
         
-    except:
-        st.error('Opps Error!! Please make sure , you enterd right information')
+    # except:
+    #     st.error('Opps Error!! Please make sure , you enterd right information')
