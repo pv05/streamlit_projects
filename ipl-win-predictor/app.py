@@ -50,7 +50,7 @@ with col3:
     wickets = st.number_input('wickets out')
 
 if st.button('Predict Wining Probabity'):
-    # try:
+    try:
         runs_left = target - score
         balls_left = 120 - (overs*6)
         wickets = 10 - wickets
@@ -75,5 +75,5 @@ if st.button('Predict Wining Probabity'):
         st.header(batting_team + " - " + str(round(win*100)) + "%")
         st.header(bowling_team + " - " + str(round(loss*100)) + "%")
         
-    # except:
-    #     st.error('Opps Error!! Please make sure , you enterd right information')
+    except:
+        st.error('Opps Error!! Please make sure , you enterd right information')
