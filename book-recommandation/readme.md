@@ -14,10 +14,10 @@ The project is divided into several stages, starting with data collection from K
 The data is then preprocessed by performing feature engineering techniques and cleaning the data to remove any irrelevant or incomplete information.
 
 ### Exploratory Data Analysis (EDA) : 
-the system performs Exploratory Data Analysis (EDA) to gain insights into the data and identify any patterns or trends. This step is crucial for understanding the data and selecting the appropriate features for clustering and content-based techniques.
+The system performs Exploratory Data Analysis (EDA) to gain insights into the data and identify any patterns or trends. This step is crucial for understanding the data and selecting the appropriate features for clustering and content-based techniques.
 
 ### Machine Learning Model apply :
-the KNN algorithm is applied to build the recommendation system. The algorithm works by finding the K-nearest neighbors of a given book and recommending books that are similar to it. The system uses a combination of clustering and content-based techniques to provide personalized recommendations to users.
+The KNN algorithm is applied to build the recommendation system. The algorithm works by finding the K-nearest neighbors of a given book and recommending books that are similar to it. The system uses a combination of clustering and content-based techniques to provide personalized recommendations to users.
 
 ### Model Deployment on streamlit : 
 Once the model is built, it is saved in pickle format. A Streamlit website is then created where users can enter the name of a book, and the model will recommend five similar books. The website is hosted for free and can be accessed by anyone.
