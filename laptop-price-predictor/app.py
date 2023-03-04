@@ -7,8 +7,6 @@ import urllib.request
 # import the model
 # pipe = pickle.load(open('pipe.pkl','rb'))
 # df = pickle.load(open('df.pkl','rb'))
-
-
 # pipe = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=1flf5wheLXQYos-5Nuy9PPGn79cDNppFM")))
 # df = pickle.load(urllib.request.urlopen(("https://drive.google.com/uc?export=download&id=14-zRh0M2sCNCf4wF_IazLEvrgSyb_YsP")))
 
