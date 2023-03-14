@@ -89,50 +89,50 @@ def display_with_link():
 
 
 uploaded_file = st.file_uploader('Choose an image',type=['jpg','png'])
-if uploaded_file is not None:
-    save_upploaded_file(uploaded_file)
-    try:
-        display_img = Image.open(uploaded_file)
-        st.image(display_img, width=None)
+with st.spinner('Please wait....AI is at work!!!'):
+    if uploaded_file is not None:
+        save_upploaded_file(uploaded_file)
+        try:
+            display_img = Image.open(uploaded_file)
+            st.image(display_img, width=None)
 
-        features = feature_extraction(os.path.join('uploads',uploaded_file.name), model)
-        st.header('Recommanded Products')
-        
-        os.remove(os.path.join('uploads',uploaded_file.name))
+            features = feature_extraction(os.path.join('uploads',uploaded_file.name), model)
+            st.header('Recommanded Products')
+            
+            os.remove(os.path.join('uploads',uploaded_file.name))
 
-        indices = recommand(features, feature_list)
+            indices = recommand(features, feature_list)
 
-        final_img,final_product_name,final_img_product_gender = display_with_link()
+            final_img,final_product_name,final_img_product_gender = display_with_link()
 
-        col1, col2, col3, col4, col5 = st.columns(5)
+            col1, col2, col3, col4, col5 = st.columns(5)
 
-        with col1:
-            # st.image(filenames[indices[0][0]])
-            st.write("For- "+final_img_product_gender[0])
-            st.image(final_img[0])
-            st.caption(final_product_name[0])
-        with col2:
-            # st.image(filenames[indices[0][1]])
-            st.write("For- "+final_img_product_gender[1])
-            st.image(final_img[1])
-            st.caption(final_product_name[1])
-        with col3:
-            # st.image(filenames[indices[0][2]])
-            st.write("For- "+final_img_product_gender[2])
-            st.image(final_img[2])
-            st.caption(final_product_name[2])
-        with col4:
-            # st.image(filenames[indices[0][3]])
-            st.write("For- "+final_img_product_gender[3])
-            st.image(final_img[3])
-            st.caption(final_product_name[3])
-        with col5:
-            # st.image(filenames[indices[0][4]])
-            st.write("For- "+final_img_product_gender[4])
-            st.image(final_img[4])
-            st.caption(final_product_name[4])
-
-        
-    except:
-        os.remove(os.path.join('uploads',uploaded_file.name))
-        st.header('Sorry!! File should be Image')
+            with col1:
+                # st.image(filenames[indices[0][0]])
+                st.write("For- "+final_img_product_gender[0])
+                st.image(final_img[0])
+                st.caption(final_product_name[0])
+            with col2:
+                # st.image(filenames[indices[0][1]])
+                st.write("For- "+final_img_product_gender[1])
+                st.image(final_img[1])
+                st.caption(final_product_name[1])
+            with col3:
+                # st.image(filenames[indices[0][2]])
+                st.write("For- "+final_img_product_gender[2])
+                st.image(final_img[2])
+                st.caption(final_product_name[2])
+            with col4:
+                # st.image(filenames[indices[0][3]])
+                st.write("For- "+final_img_product_gender[3])
+                st.image(final_img[3])
+                st.caption(final_product_name[3])
+            with col5:
+                # st.image(filenames[indices[0][4]])
+                st.write("For- "+final_img_product_gender[4])
+                st.image(final_img[4])
+                st.caption(final_product_name[4])
+ 
+        except:
+            os.remove(os.path.join('uploads',uploaded_file.name))
+            st.header('Sorry!! File should be Image')
