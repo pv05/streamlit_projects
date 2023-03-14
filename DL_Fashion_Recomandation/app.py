@@ -18,11 +18,11 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 st.title('Fashion recommander system')
 st.text('( It will take some time to open almost 2 minute beacause it based on deeplearning )')
 
-feature_list = np.array(pickle.load(open(r'C:\Users\91798\projetcs_deeplearning_based\fashion-product-images-small\embeddings_highRES.pkl', 'rb')))
-filenames = pickle.load(open(r'C:\Users\91798\projetcs_deeplearning_based\fashion-product-images-small\filenames_highRES.pkl', 'rb'))
+#feature_list = np.array(pickle.load(open(r'C:\Users\91798\projetcs_deeplearning_based\fashion-product-images-small\embeddings_highRES.pkl', 'rb')))
+#filenames = pickle.load(open(r'C:\Users\91798\projetcs_deeplearning_based\fashion-product-images-small\filenames_highRES.pkl', 'rb'))
 
-# feature_list = np.array(pickle.load(urllib.request.urlopen(r'https://www.googleapis.com/drive/v3/files/1n9yHjmIiUTmFZb8Cm-5cwKVrlMkquDkH?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k')))
-# filenames = pickle.load(urllib.request.urlopen(r'https://www.googleapis.com/drive/v3/files/1mdqfwxltwQpsNflTFmQdUic44uSWBX-Q?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k'))
+feature_list = np.array(pickle.load(urllib.request.urlopen(r'https://www.googleapis.com/drive/v3/files/1n9yHjmIiUTmFZb8Cm-5cwKVrlMkquDkH?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k')))
+filenames = pickle.load(urllib.request.urlopen(r'https://www.googleapis.com/drive/v3/files/1mdqfwxltwQpsNflTFmQdUic44uSWBX-Q?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k'))
 
 model = ResNet50(weights='imagenet', include_top=False,
                  input_shape=(224, 224, 3))
