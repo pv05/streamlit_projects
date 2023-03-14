@@ -99,7 +99,10 @@ with st.spinner('Please wait....AI is at work!!!'):
             features = feature_extraction(os.path.join('uploads',uploaded_file.name), model)
             st.header('Recommanded Products')
             
-            os.remove(os.path.join('uploads',uploaded_file.name))
+            try:
+                os.remove(os.path.join('uploads',uploaded_file.name))
+            except FileNotFoundError:
+                pass 
 
             indices = recommand(features, feature_list)
 
