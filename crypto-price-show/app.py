@@ -64,5 +64,5 @@ try:
             placeholder.empty()
 
 except urllib.error.HTTPError as e:
-    st.error("An HTTP error occurred : Your API is blockled ")
+    st.error("An HTTP error occurred : Your API is blocked ")
     st.error("Run this application in your local system ([Download the code](https://github.com/pv05/streamlit_projects/blob/main/crypto-price-show/app.py))")
