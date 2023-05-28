@@ -23,4 +23,4 @@ To summarize, the "Crypto Live Price Show" project provides a dashboard for real
 
 
 ### Visit website :
-[https://crypto.streamlit.app](https://crypto.streamlit.app)
+[https://livecrypto.streamlit.app](https://livecrypto.streamlit.app)

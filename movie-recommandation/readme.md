@@ -19,4 +19,4 @@ In conclusion, our movie recommendation system using clustering and content-base
 
 
 ### Visit website :
-[https://movie.streamlit.app](https://movie.streamlit.app)
+[https://movierecommand.streamlit.app](https://movierecommand.streamlit.app)
