@@ -9,7 +9,7 @@ st.sidebar.title('Select Your Cryptocurreny')
 st.sidebar.image('https://cdn.pixabay.com/photo/2019/05/15/18/31/bitcoin-4205661_960_720.jpg')
 
 try:
-    data = pd.read_json('https://api.binance.com/api/v3/ticker/24hrr')
+    data = pd.read_json('https://api.binance.com/api/v3/ticker/24hr')
 
     crypto_1 = st.sidebar.selectbox('Crypto_1', data.symbol, list(data.symbol).index('SHIBUSDT'))
     crypto_2 = st.sidebar.selectbox('Crypto_2', data.symbol, list(data.symbol).index('BTCUSDT'))
