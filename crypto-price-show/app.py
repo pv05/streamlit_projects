@@ -1,13 +1,17 @@
 import streamlit as st 
 import pandas as pd 
 import time
+import urllib.error
 
 st.markdown("<h1 style='text-align: center; color: black;'>Selected Crypto Price Live Data</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: black;'>( Price Fluctuate In Every 5 Seconds )</p>", unsafe_allow_html=True)
 st.sidebar.title('Select Your Cryptocurreny')
 st.sidebar.image('https://cdn.pixabay.com/photo/2019/05/15/18/31/bitcoin-4205661_960_720.jpg')
 
-data = pd.read_json('https://api.binance.com/api/v3/ticker/24hr')
+try:
+    data = pd.read_json('https://api.binance.com/api/v3/ticker/24hr')
+except urllib.error.HTTPError as e:
+    print("An HTTP error occurred : Binance block your ip")
 
 crypto_1 = st.sidebar.selectbox('Crypto_1', data.symbol, list(data.symbol).index('SHIBUSDT'))
 crypto_2 = st.sidebar.selectbox('Crypto_2', data.symbol, list(data.symbol).index('BTCUSDT'))
