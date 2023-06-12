@@ -13,7 +13,9 @@ book_pivot = pickle.load(urllib.request.urlopen('https://www.googleapis.com/driv
 
 final_img_url = pd.read_csv('https://raw.githubusercontent.com/pv05/streamlit_projects/main/book-recommandation/final_img_url.csv')
 
-st.title('Book Recommandation')
+github_repo_link = "https://github.com/pv05/project_ML/tree/main/Book-recommender-clustring-ContentBased"
+fulllink = f'[![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)]({github_repo_link})'
+st.title(f"Book Recommandation System {fulllink}")
 
 selected_book = st.selectbox('Select Book',sorted(final_img_url['title'].values))
 
