@@ -41,7 +41,7 @@ st.title(f"Movie Recommandation System {fulllink}")
 
 selected_movie = st.selectbox('Select Movie ',movies['title'].values)
 
-if st.button('recommand'):
+if st.button('Recommand'):
     names,poster = recommand(selected_movie)
 
     col1,col2,col3,col4,col5 = st.columns(5)
