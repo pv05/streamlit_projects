@@ -39,4 +39,4 @@ The final model was saved in the pickle format and deployed on a Streamlit websi
 The laptop price prediction project demonstrates the use of machine learning algorithms to predict the price of a laptop based on its specifications. The Random Forest Regressor algorithm provides a high degree of accuracy, making it a suitable choice for this type of prediction problem. The final model has been deployed on a user-friendly Streamlit website, making it easily accessible to anyone who wishes to use it.
 
 ### Visit website :
-[https://lpp.streamlit.app](https://lpp.streamlit.app)
+[predictlaptop.streamlit.app]([https://predictlaptop.streamlit.app])
