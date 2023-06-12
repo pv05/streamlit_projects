@@ -35,7 +35,9 @@ similarity =  pickle.load(urllib.request.urlopen(("https://www.googleapis.com/dr
 
 movies = pd.DataFrame(movie_dict)
 
-st.title('Movie Recommandation System')
+github_repo_link = "https://github.com/pv05/streamlit_projects/blob/main/movie-recommandation/"
+fulllink = f'[![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)]({github_repo_link})'
+st.title(f"Movie Recommandation System {fulllink}")
 
 selected_movie = st.selectbox('Select Movie ',movies['title'].values)
 
