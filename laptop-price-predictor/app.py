@@ -17,7 +17,7 @@ df = pickle.load(urllib.request.urlopen(url2))
 
 github_repo_link = "https://github.com/pv05/project_ML/tree/main/laptop_price_prediction"
 fulllink = f'[![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)]({github_repo_link})'
-st.title("Laptop Price Predictor {fulllink}")
+st.title(f"Laptop Price Predictor {fulllink}")
 
 # brand
 company = st.selectbox('Brand',df['Company'].unique())
