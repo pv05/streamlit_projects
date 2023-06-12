@@ -51,7 +51,7 @@ with col3:
 with col3:
     wickets = st.number_input('wickets out')
 
-if st.button('Predict Wining Probabity'):
+if st.button('Predict Wining Probability'):
     try:
         runs_left = target - score
         balls_left = 120 - (overs*6)
