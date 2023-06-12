@@ -25,7 +25,9 @@ cites = ['Hyderabad', 'Pune', 'Rajkot', 'Indore', 'Bangalore', 'Mumbai',
 # pipe = pickle.load(open('pipe.pkl','rb'))
 pipe = pickle.load(urllib.request.urlopen(("https://www.googleapis.com/drive/v3/files/10ml5J_qQBPimLu30WbxjXJ05oxqco2-g?alt=media&key=AIzaSyCUpIPtvM6lJw65WnZoM-Xxn7Xo6xytJ3k")))
 
-st.title('IPl Win Predictor')
+github_repo_link = "https://github.com/pv05/project_ML/tree/main/IPL-win-predictor"
+fulllink = f'[![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)]({github_repo_link})'
+st.title(f"IPL Win Predictor {fulllink}")
 
 col1,col2 = st.columns(2)
 
